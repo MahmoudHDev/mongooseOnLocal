@@ -43,7 +43,12 @@ const user4 = new Person({
     age: 23
 });
 
-Person.insertMany([user2, user3, user4]);
+console.log(await Person.findOne({ name: "Sami Marwan"}).exec());
+
+// to close the connection use the following code:
+mongoose.connection.close();
+
+// Person.insertMany([user2, user3, user4]);
 
 // const fruit = new Fruit({
 //     name:'PinApple',
